@@ -4,9 +4,16 @@ import './App.css';
 const logo = require('./logo.svg');
 
 class App extends React.Component<{}, {}> {
+  componentWillMount() {
+    return fetch(`/path`).then(resp => resp.text())
+      .then(resp => console.log(resp))
+      .catch(err => console.warn(err))
+  }
+
   render() {
     return (
       <div className="App">
+        <div className="" />
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>

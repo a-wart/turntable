@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "./node_modules/.bin/nodemon server.js",
+    "client": "node start-client.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,19 @@
   "bugs": {
     "url": "https://github.com/a-wart/turntable/issues"
   },
-  "homepage": "https://github.com/a-wart/turntable#readme"
+  "homepage": "https://github.com/a-wart/turntable#readme",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.0.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^3.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
 }
